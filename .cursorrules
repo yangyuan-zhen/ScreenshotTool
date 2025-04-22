@@ -1,0 +1,32 @@
+name = "ScreenshotTool"
+language = "C++"
+framework = "Qt"
+build_system = "CMake"
+
+[description]
+summary = "一个基于 Qt 的自定义截图工具，支持鼠标拖动选择区域并截图。"
+goals = [
+  "实现一个透明全屏窗口，允许用户拖动选择截图区域",
+  "绘制截图选区，支持 Esc 取消、Enter 确认",
+  "保存截图为本地图片或复制到剪贴板",
+  "支持后续扩展热键启动、延时截图等功能"
+]
+
+[guidance]
+# 鼠标事件
+mouse_events = "使用 mousePressEvent / mouseMoveEvent / mouseReleaseEvent 捕捉用户拖动选区"
+# 绘制框选区域
+painting = "使用 QPainter 在 overlay 窗口中绘制一个半透明遮罩与矩形选区"
+# 截图
+screenshot = "使用 QScreen::grabWindow 获取选区图像"
+# 按键交互
+key_handling = "监听 Esc 取消截图，Enter 保存截图"
+
+[files]
+entry_point = "main.cpp"
+core_logic = ["ScreenshotTool.cpp", "ScreenshotTool.h"]
+ui_files = []
+resource_files = []
+
+[output]
+screenshot_path = "./screenshot_YYYYMMDD_HHmmss.png"
