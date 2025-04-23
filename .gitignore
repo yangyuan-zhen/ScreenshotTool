@@ -1,0 +1,69 @@
+# 构建目录
+build/
+out/
+
+# C++对象文件和库
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.lib
+*.exe
+*.ilk
+*.pdb
+
+# Qt生成的文件
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qm
+*.moc
+*_automoc.cpp
+
+# CMake生成的文件
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Qt Creator生成的文件
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.qmlproject.user
+*.qmlproject.user.*
+CMakeLists.txt.user*
+
+# VS Code生成的文件
+.vscode/
+.history/
+*.code-workspace
+
+# Visual Studio生成的文件
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# 截图输出文件
+screenshot_*.png
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini 

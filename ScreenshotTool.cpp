@@ -32,20 +32,20 @@ ScreenshotTool::ScreenshotTool(QWidget *parent)
     
     QVBoxLayout *mainLayout = new QVBoxLayout(m_customSizeWidget);
     
-    m_sizeLabel = new QLabel("输入自定义截图尺寸", m_customSizeWidget);
+    m_sizeLabel = new QLabel("Input Custom Size", m_customSizeWidget);
     m_sizeLabel->setAlignment(Qt::AlignCenter);
     m_sizeLabel->setStyleSheet("font-weight: bold; font-size: 14px; padding: 5px;");
     
     QHBoxLayout *inputLayout = new QHBoxLayout();
     
-    QLabel *widthLabel = new QLabel("宽度:", m_customSizeWidget);
+    QLabel *widthLabel = new QLabel("Width:", m_customSizeWidget);
     m_widthEdit = new QLineEdit(m_customSizeWidget);
     m_widthEdit->setValidator(new QIntValidator(1, 9999, this));
     m_widthEdit->setFixedWidth(60);
     m_widthEdit->setStyleSheet("background-color: white; color: black; padding: 5px;");
     connect(m_widthEdit, &QLineEdit::textChanged, this, &ScreenshotTool::onWidthChanged);
     
-    QLabel *heightLabel = new QLabel("高度:", m_customSizeWidget);
+    QLabel *heightLabel = new QLabel("Height:", m_customSizeWidget);
     m_heightEdit = new QLineEdit(m_customSizeWidget);
     m_heightEdit->setValidator(new QIntValidator(1, 9999, this));
     m_heightEdit->setFixedWidth(60);
@@ -60,12 +60,12 @@ ScreenshotTool::ScreenshotTool(QWidget *parent)
     
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     
-    m_confirmButton = new QPushButton("确认", m_customSizeWidget);
+    m_confirmButton = new QPushButton("Confirm", m_customSizeWidget);
     m_confirmButton->setCursor(Qt::PointingHandCursor);
     m_confirmButton->setStyleSheet("background-color: #4CAF50; padding: 5px 15px; border: none; border-radius: 3px;");
     connect(m_confirmButton, &QPushButton::clicked, this, &ScreenshotTool::onCustomSizeConfirmed);
     
-    m_cancelButton = new QPushButton("取消", m_customSizeWidget);
+    m_cancelButton = new QPushButton("Cancel", m_customSizeWidget);
     m_cancelButton->setCursor(Qt::PointingHandCursor);
     m_cancelButton->setStyleSheet("background-color: #f44336; padding: 5px 15px; border: none; border-radius: 3px;");
     connect(m_cancelButton, &QPushButton::clicked, this, &ScreenshotTool::onCustomSizeCancelled);
@@ -166,7 +166,7 @@ void ScreenshotTool::paintEvent(QPaintEvent *event)
         painter.drawRect(m_selectedArea);
         
         // 绘制选区大小信息
-        QString sizeText = QString("%1 x %2 (自定义)").arg(m_selectedArea.width()).arg(m_selectedArea.height());
+        QString sizeText = QString("%1 x %2 (Custom)").arg(m_selectedArea.width()).arg(m_selectedArea.height());
         QFont font = painter.font();
         font.setBold(true);
         painter.setFont(font);
